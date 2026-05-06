@@ -90,7 +90,7 @@ Location     Luxembourg
 
 ### Valore &mdash; Wealth Management Desktop Application
 
-Desktop application for wealth management built for **ANF Luxembourg S.A.**, a company supervised by the <a href="https://www.cssf.lu/">CSSF</a> (Commission de Surveillance du Secteur Financier).
+Desktop application for wealth management built for EAM's, companies supervised by the <a href="https://www.cssf.lu/">CSSF</a> (Commission de Surveillance du Secteur Financier).
 
 **Tech stack**
 - Desktop application built with **Node.js + Tauri** and an embedded web frontend
