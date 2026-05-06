@@ -88,21 +88,76 @@ Location     Luxembourg
 
 ## Featured Project
 
-### Valore &mdash; Wealth Management Desktop Application
+### Valore - Wealth Management Desktop Application
 
-Desktop application for wealth management built for EAM's, companies supervised by the <a href="https://www.cssf.lu/">CSSF</a> (Commission de Surveillance du Secteur Financier).
+> **Born in Luxembourg. Designed to scale globally.**
 
-**Tech stack**
-- Desktop application built with **Node.js + Tauri** and an embedded web frontend
-- Custom visual identity with a golden palette (`#C8A84B` dark mode / `#7A6020` light mode)
-- Full set of custom SVG/PNG icons and multi-section navigation
+A local-first desktop platform for wealth managers serving HNW/UHNW clients and Family Offices. Built in partnership with **ANF Luxembourg**, Valore consolidates portfolio management, regulatory compliance, and KYC/AML workflows into a single auditable system - with no cloud dependency.
 
-**Regulatory context**
-- Designed against applicable requirements in **MiFID II**, **KYC** and **GDPR**
-- Focus on traceability, security and sensitive-data handling
+---
 
-**Why it matters**
-> Building software inside a CSSF-supervised financial context demands discipline in security, traceability and quality &mdash; skills that transfer to any critical technical project, financial or otherwise.
+#### The problem it solves
+
+Wealth managers serving sophisticated clients operate under three competing pressures:
+
+1. **Tightening regulation** (MiFID II, AMLD, GDPR) that demands traceability and auditability across every client interaction
+2. **Data confidentiality requirements** that frequently rule out cloud-hosted SaaS solutions, especially for Family Offices and UHNW mandates
+3. **Fragmented data** arriving from multiple custodian banks in incompatible formats, often as PDFs that require manual reconciliation
+
+Existing platforms (Addepar, Black Diamond, Orion, Envestnet Tamarac) solve parts of the puzzle but assume cloud-first architectures and Anglo-Saxon market structures - leaving European boutique managers underserved.
+
+---
+
+#### What Valore does
+
+- **Automated bank statement parsing** for European custodians, currently supporting Indosuez, BIL, BDL, and Intesa Sanpaolo, with an extensible pipeline designed for additional institutions
+- **Unified portfolio visualization** across custodians, asset classes, currencies, and reporting horizons
+- **KYC/AML lifecycle management** with suitability assessments aligned to MiFID II requirements
+- **Immutable audit logs** for every operation, supporting reproducibility and regulatory inspection
+- **Asset enrichment** with automated classification and metadata resolution for financial instruments
+- **Compliance calendar** tracking regulatory deadlines, with planned `.ics` export for native calendar integration
+
+---
+
+#### Tech stack
+
+| Layer | Stack |
+|---|---|
+| Desktop frontend | React 19 + Tauri v2 |
+| Backend API | FastAPI + SQLite |
+| PDF automation | Python (`watchdog`, `pdfplumber`) |
+| Document generation | ReportLab |
+| Architecture | Local-first - all data processed and stored on the user's machine |
+| Landing page | Next.js (in migration), deployed on Vercel |
+
+---
+
+#### Compliance and regulatory framing
+
+Valore is engineered around the requirements that govern private wealth management in Europe and beyond. **MiFID II suitability**, **KYC/AML aligned with FATF and EU AMLD frameworks**, and **GDPR / LGPD compliance** are treated as core features rather than overhead.
+
+The local-first architecture is itself a compliance feature: clients whose data confidentiality policies forbid cloud storage - a common posture among Family Offices and UHNW desks - can deploy Valore without compromise. Sensitive client data never crosses a network boundary.
+
+Luxembourg serves as a **credibility anchor**, not a market constraint. The platform is designed for global deployment, with the regulatory rigor of a CSSF-grade environment as its baseline rather than its ceiling.
+
+---
+
+#### Why it matters
+
+Building software inside a regulated financial context demands discipline in:
+
+- **Security** of sensitive client and asset data
+- **Traceability** of every read, write, and transformation
+- **Data integrity** across heterogeneous custodian feeds
+- **Quality assurance** under conditions where errors carry regulatory and reputational cost
+
+Valore is the proof point of skills that transfer to any critical technical or operational project: rigorous handling of sensitive data, end-to-end auditability, full-stack ownership, and the ability to translate dense regulatory requirements into clean, usable software.
+
+---
+
+#### Status and roadmap
+
+Valore is in active development. Current focus areas include expanding bank coverage beyond the four European custodians already supported, migrating from a pure local architecture to a local-server hybrid, and shipping eight additional planned features. The landing page is being migrated from React SPA to Next.js to address SEO and indexing.
 
 ---
 
